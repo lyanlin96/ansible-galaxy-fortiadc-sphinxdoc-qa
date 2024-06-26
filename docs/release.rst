@@ -2,7 +2,7 @@
 Release Notes
 ==============================
 
-Release Galaxy 1.2.1
+Release Galaxy 1.1.1 test
 --------------------
 
 Release Targets
