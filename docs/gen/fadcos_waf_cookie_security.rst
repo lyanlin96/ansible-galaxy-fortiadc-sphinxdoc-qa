@@ -4,7 +4,7 @@
 
 .. fadcos_waf_cookie_security:
 
-fadcos_waf_cookie_security -- Configure the WAF Cookie Security policy
+fadcos_waf_cookie_security -- Configure a Cookie Security policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cookie_security -- Configure the WAF Cookie Security policy
 
 Synopsis
 --------
-- Configure the Cookie Security policy
+- Configure a Cookie Security policy
 
 
 
@@ -74,6 +74,7 @@ Parameters
     <li> <span class="li-head">security_action</span> - Select the action to apply.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">secure</span> - Enable to add the secure flag to cookies.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">severity</span> - Select which severity level FortiADC uses when using Cookie Security.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
 
     </ul>
 

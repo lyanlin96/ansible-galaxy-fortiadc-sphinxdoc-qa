@@ -4,7 +4,7 @@
 
 .. fadcos_waf_advanced_protection:
 
-fadcos_waf_advanced_protection -- Configure the WAF advanced protection
+fadcos_waf_advanced_protection -- Configure an Advanced Protection policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_advanced_protection -- Configure the WAF advanced protection
 
 Synopsis
 --------
-- Configure the WAF advanced protection
+- Configure an Advanced Protection policy
 
 
 
@@ -75,29 +75,20 @@ Examples
           connection: httpapi
           gather_facts: false
           tasks:
-            - name: Add WAF advanced protection child rule
-              fadcos_waf_advanced_protection_child_rule:
+            - name: Add WAF advanced_protection
+              fadcos_waf_advanced_protection:
                 action: add
-                name: AP0
-                occurrence_limit: 120
-                occurrence_within: 90
-                percentage_match: 30
-                type: content-scraping
+                name: wdp1
 
-            - name: edit WAF advanced protection child rule
-              fadcos_waf_advanced_protection_child_rule:
-                action: edit
-                name: AP0
-                occurrence_limit: 150
-                occurrence_within: 100
-                percentage_match: 50
-                id: 1
+            - name: get WAF advanced_protection
+              fadcos_waf_advanced_protection:
+                action: get
+                name: wdp1
 
             - name: delete WAF advanced_protection
-              fadcos_waf_advanced_protection_child_rule:
+              fadcos_waf_advanced_protection:
                 action: delete
-                name: AP0
-                id: 2
+                name: wdp1
             
 Return Values
 -------------

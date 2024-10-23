@@ -4,7 +4,7 @@
 
 .. fadcos_waf_cors_protection:
 
-fadcos_waf_cors_protection -- Configure the WAF CORS Protections
+fadcos_waf_cors_protection -- Configure a CORS Protections Policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_protection -- Configure the WAF CORS Protections
 
 Synopsis
 --------
-- Configuring a CORS Protection Rule List
+- Configure a CORS Protections Policy
 
 
 
@@ -62,6 +62,7 @@ Parameters
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">name</span> - Specify the name of the CORS Protection Rule List.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">status</span> - Enable/disable to allow this rule to protect a specific domain name or IP address.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

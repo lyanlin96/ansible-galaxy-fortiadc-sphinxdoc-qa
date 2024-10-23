@@ -4,7 +4,7 @@
 
 .. fadcos_waf_allowed_origin_list:
 
-fadcos_waf_allowed_origin_list -- Create and configure the Allowed Origin List from Allowed Origin tab
+fadcos_waf_allowed_origin_list -- Configuring a list entry of a Allowed Origin List
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_allowed_origin_list -- Create and configure the Allowed Origin List f
 
 Synopsis
 --------
-- Create and configure the Allowed Origin List from Allowed Origin tab
+- Configuring a list entry of a Allowed Origin List
 
 
 
@@ -65,6 +65,7 @@ Parameters
     <li> <span class="li-head">port</span> - Specify the TCP port number for the CORS connections. (Range: 0-65535; default: 80).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal">default: 80</span> </li>
     <li> <span class="li-head">protocol</span> - Select which type of protocols are allowed for the connections between foreign applications and your application.<span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
     <li> <span class="li-head">include_sub_domains</span> - Enable/disable to allow/disallow the Origin Value to match with the domains of its sub level.<span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

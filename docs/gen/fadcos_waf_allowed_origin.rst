@@ -4,7 +4,7 @@
 
 .. fadcos_waf_allowed_origin:
 
-fadcos_waf_allowed_origin -- Configure the WAF allowed origin
+fadcos_waf_allowed_origin -- Configuring an Allowed Origin List
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -61,6 +61,7 @@ Parameters
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">name</span> - Specify the name of a unique Allowed Origin. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

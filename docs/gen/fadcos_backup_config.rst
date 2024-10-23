@@ -68,10 +68,13 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">path</span> - The config file save path<span class="li-normal">type: str</span> <span class="li-required">required: true</span></li>
-    <li> <span class="li-head">name</span> - The config file save name<span class="li-normal">type: str</span> <span class="li-required">required: true</span></li>
+    <li> <span class="li-head">path</span> - The config file save path<span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">name</span> - The config file save name<span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
     <li> <span class="li-head">configtype</span> - The backup type<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </span> <span class="li-normal">default: local</span></li>
     <li> <span class="li-head">password</span> - The config file unzip password<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">action=download and type=local (default)</span> - will download current config to local PC.</li>
+    <li> <span class="li-head">action=save and name= xxx</span> - will backup current config and save it to ADC backup config list as name of xxx.</li>
+    <li> <span class="li-head">action=download and type=adc and name=xxx</span> - will be download config with specified config name:xxx from the adc backup config list.</li>
     </ul>
 
 

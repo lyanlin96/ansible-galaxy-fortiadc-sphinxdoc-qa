@@ -1,10 +1,10 @@
-:source: fadcos_waf_cors_headers_child_list.py
+:source: fadcos_waf_openapi_validation_detection.py
 
 :orphan:
 
-.. fadcos_waf_cors_headers_child_list:
+.. fadcos_waf_openapi_validation_detection:
 
-fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Headers List
+fadcos_waf_openapi_validation_detection -- Configuring OpenAPI Detection
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Heade
 
 Synopsis
 --------
-- Configure the list entries of a CORS Headers List
+- Configuring OpenAPI Detection
 
 
 
@@ -42,7 +42,7 @@ FortiADC Version Compatibility
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
- <td>fadcos_waf_cors_headers_child_list</td>
+ <td>fadcos_waf_openapi_validation_detection</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -60,10 +60,13 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">name</span> - Specify the name of the CORS header list <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">header</span> - Specify the HTTP header as a string. (1-63 characters).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">id</span> - Specify the ID of the CORS header in the list.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
+    <li> <span class="li-head">name</span> - Configure the name. Valid characters are A-Z, a-z, 0-9, _, and -. Whitespaces not allowed.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">severity</span> - When FortiADC records violations of this rule in the attack log, each log message contains a Severity Level (severity_level) field. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">security_action</span> - Select the action profile that you want to apply.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">exception_id</span> - Specify the ID of an exception configuration object. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">openapi_format_checks</span> - Enable to use OpenAPI format to validate OpenAPI content. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">openapi_schema_checks</span> - Enable to use OpenAPI schema to validate OpenAPI content. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</span></li>
     </ul>
 
 
@@ -78,27 +81,35 @@ Examples
           connection: httpapi
           gather_facts: false
           tasks:
-            - name: Add WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+            - name: Add waf_openapi_validation_detection
+              fadcos_waf_openapi_validation_detection:
                 action: add
-                name: cor1
-                header: hhhhh
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_vd1
+                security_action: alert
+                exception_id: n1
+                openapi_format_checks: enable
+                openapi_schema_checks: enable
+                severity: low
+
+            - name: edit waf_openapi_validation_detection
+              fadcos_waf_openapi_validation_detection:
                 action: edit
-                name: cor1
-                id: 1
-                header: kkkkk
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_vd1
+                security_action: block
+                exception_id: n1
+                openapi_format_checks: enable
+                openapi_schema_checks: enable
+                severity: high
+
+            - name: get waf_openapi_validation_detection
+              fadcos_waf_openapi_validation_detection:
                 action: get
-                name: cor1
-                id: 1
-            - name: delete WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_vd1
+
+            - name: delete waf_openapi_validation_detection
+              fadcos_waf_openapi_validation_detection:
                 action: delete
-                name: cor1
-                id: 1
+                name: test_vd1
             
 Return Values
 -------------

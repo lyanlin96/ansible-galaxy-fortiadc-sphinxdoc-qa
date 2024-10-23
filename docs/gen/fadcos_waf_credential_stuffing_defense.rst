@@ -4,7 +4,7 @@
 
 .. fadcos_waf_credential_stuffing_defense:
 
-fadcos_waf_credential_stuffing_defense -- Configure the WAF credential stuffing defense
+fadcos_waf_credential_stuffing_defense -- Configuring a Credential Stuffing Defense policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_credential_stuffing_defense -- Configure the WAF credential stuffing 
 
 Synopsis
 --------
-- Configure a Credential Stuffing Defense policy
+- Configuring a Credential Stuffing Defense policy
 
 
 
@@ -64,6 +64,7 @@ Parameters
     <li> <span class="li-head">status</span> - Enable or disable this profile.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">security_action</span> - Select the action profile that you want to apply. See Configuring WAF Action objects.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">severity</span> - Specify the severity.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

@@ -1,10 +1,10 @@
-:source: fadcos_waf_cors_headers_child_list.py
+:source: fadcos_waf_parameter_validation_rule.py
 
 :orphan:
 
-.. fadcos_waf_cors_headers_child_list:
+.. fadcos_waf_parameter_validation_rule:
 
-fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Headers List
+fadcos_waf_parameter_validation_rule -- Configuring a Parameter Validation rule
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Heade
 
 Synopsis
 --------
-- Configure the list entries of a CORS Headers List
+- Configuring a Parameter Validation rule
 
 
 
@@ -42,7 +42,7 @@ FortiADC Version Compatibility
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
- <td>fadcos_waf_cors_headers_child_list</td>
+ <td>fadcos_waf_parameter_validation_rule</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -60,10 +60,13 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">name</span> - Specify the name of the CORS header list <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">header</span> - Specify the HTTP header as a string. (1-63 characters).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">id</span> - Specify the ID of the CORS header in the list.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
+    <li> <span class="li-head">name</span> - Specify the name for the Parameter Validation Rule.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">severity</span> - When FortiADC records violations of this rule in the attack log, each log message contains a Severity Level (severity_level) field. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">security_action</span> - Select the action profile that you want to apply.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">host_status</span> - Enable to require that the Host: field of the HTTP request match a protected host name's entry in order to match the URL access rule. Also configure Host.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">host</span> - The Host option is available if Host Status is enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">host</span> - The HTTP request URL must be start with /. eg./login. This item must be set when configuring the rule. FortiADC will match the other item (rule) when matching the request URL; if the match fails, FortiADC will not attempt to match others.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</span></li>
     </ul>
 
 
@@ -78,27 +81,29 @@ Examples
           connection: httpapi
           gather_facts: false
           tasks:
-            - name: Add WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+            - name: Add parameter_validation_rule
+              fadcos_waf_parameter_validation_rule:
                 action: add
-                name: cor1
-                header: hhhhh
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_pr1
+                severity: low
+                url: /abb/ccd
+                
+            - name: edit parameter_validation_rule
+              fadcos_waf_parameter_validation_rule:
                 action: edit
-                name: cor1
-                id: 1
-                header: kkkkk
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_pr1
+                severity: high
+                url: /hggg/ccd
+                
+            - name: get parameter_validation_rule
+              fadcos_waf_parameter_validation_rule:
                 action: get
-                name: cor1
-                id: 1
-            - name: delete WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_pr1
+
+            - name: delete parameter_validation_rule
+              fadcos_waf_parameter_validation_rule:
                 action: delete
-                name: cor1
-                id: 1
+                name: test_pr1
             
 Return Values
 -------------

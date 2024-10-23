@@ -4,7 +4,7 @@
 
 .. fadcos_waf_api_discovery_child_security_rule:
 
-fadcos_waf_api_discovery_child_security_rule -- Configure the child security rules of WAF API discovery profiles
+fadcos_waf_api_discovery_child_security_rule -- Configure security rules of an API discovery policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_api_discovery_child_security_rule -- Configure the child security rul
 
 Synopsis
 --------
-- Configure the child security rules of WAF API Discovery profiles
+- Configure security rules of an API discovery policy
 
 
 
@@ -67,6 +67,7 @@ Parameters
     <li> <span class="li-head">path</span> - Specify the API resource path.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">req_rate</span> - Specify the allowable requests per second.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">severity</span> - Select the event severity to log when a bot is detected.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

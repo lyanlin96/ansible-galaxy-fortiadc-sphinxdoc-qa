@@ -1,10 +1,10 @@
-:source: fadcos_waf_cors_headers_child_list.py
+:source: fadcos_waf_http_header_security.py
 
 :orphan:
 
-.. fadcos_waf_cors_headers_child_list:
+.. fadcos_waf_http_header_security:
 
-fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Headers List
+fadcos_waf_http_header_security -- Configuring an HTTP Header Security policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Heade
 
 Synopsis
 --------
-- Configure the list entries of a CORS Headers List
+- Configuring an HTTP Header Security policy
 
 
 
@@ -42,7 +42,7 @@ FortiADC Version Compatibility
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
- <td>fadcos_waf_cors_headers_child_list</td>
+ <td>fadcos_waf_http_header_security</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -60,10 +60,11 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">name</span> - Specify the name of the CORS header list <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">header</span> - Specify the HTTP header as a string. (1-63 characters).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">id</span> - Specify the ID of the CORS header in the list.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
+    <li> <span class="li-head">name</span> - Enter a unique HTTP Header Security policy name. Valid characters are A-Z, a-z, 0-9, _, and -. No space is allowed. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">mode</span> - Specify header operation mode for the response from the back-end server(s).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">request_status</span> - Enable/disable request URL match. This is disabled by default.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">request_url</span> - The Request URL option is available if Request Status is enabled. Specify the URL used to match requests so that security headers can be applied to responses of the matched requests.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</span></li>
     </ul>
 
 
@@ -78,27 +79,36 @@ Examples
           connection: httpapi
           gather_facts: false
           tasks:
-            - name: Add WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+            - name: Add WAF http_header_security
+              fadcos_waf_http_header_security:
                 action: add
-                name: cor1
-                header: hhhhh
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: hts1
+                mode: add-always
+                request_status: enable
+                request_url: /test/hhs1
+
+            - name: Add duplicate WAF http_header_security
+              fadcos_waf_http_header_security:
+                action: add
+                name: hts2
+
+            - name: edit WAF http_header_security
+              fadcos_waf_http_header_security:
                 action: edit
-                name: cor1
-                id: 1
-                header: kkkkk
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: hts1
+                mode: add-replace
+                request_status: enable
+                request_url: /test/adac1
+
+            - name: get WAF http_header_security
+              fadcos_waf_http_header_security:
                 action: get
-                name: cor1
-                id: 1
-            - name: delete WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: hts1
+
+            - name: delete WAF http_header_security
+              fadcos_waf_http_header_security:
                 action: delete
-                name: cor1
-                id: 1
+                name: hts2
             
 Return Values
 -------------

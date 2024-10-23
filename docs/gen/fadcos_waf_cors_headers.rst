@@ -4,7 +4,7 @@
 
 .. fadcos_waf_cors_headers:
 
-fadcos_waf_cors_headers -- Configure the WAF CORS headers
+fadcos_waf_cors_headers -- Configuring a CORS Headers List
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_headers -- Configure the WAF CORS headers
 
 Synopsis
 --------
-- Configuring a CORS Headers List Profile
+- Configuring a CORS Headers List
 
 
 
@@ -61,6 +61,7 @@ Parameters
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">name</span> - Specify the CORS Headers name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 
