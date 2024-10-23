@@ -1,10 +1,10 @@
-:source: fadcos_waf_cors_headers_child_list.py
+:source: fadcos_waf_csrf_protection_child_url_list.py
 
 :orphan:
 
-.. fadcos_waf_cors_headers_child_list:
+.. fadcos_waf_csrf_protection_child_url_list:
 
-fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Headers List
+fadcos_waf_csrf_protection_child_url_list -- Configure the URL List of a CSRF protection policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Heade
 
 Synopsis
 --------
-- Configure the list entries of a CORS Headers List
+- Configure the URL List of a CSRF protection policy
 
 
 
@@ -42,7 +42,7 @@ FortiADC Version Compatibility
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
- <td>fadcos_waf_cors_headers_child_list</td>
+ <td>fadcos_waf_csrf_protection_child_url_list</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -60,9 +60,12 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">name</span> - Specify the name of the CORS header list <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">header</span> - Specify the HTTP header as a string. (1-63 characters).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">id</span> - Specify the ID of the CORS header in the list.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">name</span> - Specify the name of the CSRF policy. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">id</span> - Specify the ID of the URL rule under the CSRF policy refered by its name.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">url</span> -  Specify the URL. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">para_filter</span> - Switch of the Parameter Filter. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">para_filter_name</span> -  Specify the name of the Parameter Filter. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">para_filter_value</span> -  Specify the value of the Parameter Filter. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
     <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
@@ -78,27 +81,24 @@ Examples
           connection: httpapi
           gather_facts: false
           tasks:
-            - name: Add WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+            - name: Add WAF csrf_protection_child_csrf_url_list entry
+              fadcos_waf_csrf_protection_child_url_list:
                 action: add
-                name: cor1
-                header: hhhhh
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: cf1
+                para_filter: enable
+                para_filter_name: time  
+                para_filter_value: date
+                url: /mytest/t1
+
+            - name: edit WAF csrf_protection_child_csrf_url_list entry
+              fadcos_waf_csrf_protection_child_url_list:
                 action: edit
-                name: cor1
+                name: cf1
                 id: 1
-                header: kkkkk
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
-                action: get
-                name: cor1
-                id: 1
-            - name: delete WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
-                action: delete
-                name: cor1
-                id: 1
+                para_filter: enable
+                para_filter_name: money  
+                para_filter_value: gold
+                url: /newtest/a1
             
 Return Values
 -------------

@@ -4,7 +4,7 @@
 
 .. fadcos_waf_cors_protection_rule_list:
 
-fadcos_waf_cors_protection_rule_list -- Configure the WAF CORS Protection Rule List
+fadcos_waf_cors_protection_rule_list -- Configuring a Rule object of a CORS Protection Policy 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_protection_rule_list -- Configure the WAF CORS Protection Rule L
 
 Synopsis
 --------
-- Configure the WAF CORS Protection Rule List
+- Configuring a Rule object of a CORS Protection Policy 
 
 
 
@@ -77,6 +77,7 @@ Parameters
     <li> <span class="li-head">allowed_max_age</span> - Specify the maximum time period in seconds.  <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">methods</span> - Specify the methods. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">request_url</span> - Specify the request URL as a regular expression. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

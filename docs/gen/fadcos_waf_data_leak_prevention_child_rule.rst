@@ -1,10 +1,10 @@
-:source: fadcos_waf_cors_headers_child_list.py
+:source: fadcos_waf_data_leak_prevention_child_rule.py
 
 :orphan:
 
-.. fadcos_waf_cors_headers_child_list:
+.. fadcos_waf_data_leak_prevention_child_rule:
 
-fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Headers List
+fadcos_waf_data_leak_prevention_child_rule -- Configuring Rule objects of a DLP Policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Heade
 
 Synopsis
 --------
-- Configure the list entries of a CORS Headers List
+- Configuring Rule objects of a DLP Policy
 
 
 
@@ -42,7 +42,7 @@ FortiADC Version Compatibility
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
- <td>fadcos_waf_cors_headers_child_list</td>
+ <td>fadcos_waf_data_leak_prevention_child_rule</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -60,10 +60,13 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">name</span> - Specify the name of the CORS header list <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">header</span> - Specify the HTTP header as a string. (1-63 characters).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">id</span> - Specify the ID of the CORS header in the list.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
+    <li> <span class="li-head">name</span> - Specify the name of the <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">type</span> - Specify the type of rule object, sdt (sensitive data type) or sensors.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">id</span> - Specify the ID of rule object.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">threshold</span> - Specify the threshold. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">sensitive_data_type</span> - Specify the value of sensitive data type (if type is sdt). <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">uri</span> - Specify the URI. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</span></li>
     </ul>
 
 
@@ -78,26 +81,47 @@ Examples
           connection: httpapi
           gather_facts: false
           tasks:
-            - name: Add WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+            - name: Add WAF data_leak_prevention_child_rule
+              fadcos_waf_data_leak_prevention_child_rule:
                 action: add
-                name: cor1
-                header: hhhhh
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
-                action: edit
-                name: cor1
-                id: 1
-                header: kkkkk
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: dl1
+                threshold: 555
+                type: sdt
+                uri: /home/user
+                sensitive_data_type: Email
+
+            - name: Add another WAF data_leak_prevention_child_rule
+              fadcos_waf_data_leak_prevention_child_rule:
+                action: add
+                name: dl1
+                threshold: 777
+                type: sensors
+                uri: /abc123/aeet
+                sensor: sensor1
+
+            - name: get WAF data_leak_prevention_child_rule
+              fadcos_waf_data_leak_prevention_child_rule:
                 action: get
-                name: cor1
+                name: dl1
                 id: 1
-            - name: delete WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+
+            - name: edit WAF data_leak_prevention_child_rule
+              fadcos_waf_data_leak_prevention_child_rule:
+                action: edit
+                name: dl1
+                id: 1        
+                threshold: 2345
+                uri: /work/comp1
+
+            - name: get all WAF data_leak_prevention_child_rule
+              fadcos_waf_data_leak_prevention_child_rule:
+                action: get
+                name: dl1
+
+            - name: delete WAF data_leak_prevention_child_rule
+              fadcos_waf_data_leak_prevention_child_rule:
                 action: delete
-                name: cor1
+                name: dl1
                 id: 1
             
 Return Values

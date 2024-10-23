@@ -63,6 +63,7 @@ Parameters
     <li> <span class="li-head">name</span> - Specify the name of the Cookie Security policy.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">cookie_security_name</span> - Specify the name of the cookie to be encrypted .<span clahe ss="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">id</span> - Specify the ID of cookie in the list.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

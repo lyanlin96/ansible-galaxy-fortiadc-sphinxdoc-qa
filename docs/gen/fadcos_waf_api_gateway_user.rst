@@ -4,7 +4,7 @@
 
 .. fadcos_waf_api_gateway_user:
 
-fadcos_waf_api_gateway_user -- Configure the WAF gateway users
+fadcos_waf_api_gateway_user -- Configure user profiles of an API Gateway policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_api_gateway_user -- Configure the WAF gateway users
 
 Synopsis
 --------
-- Configure the WAF gateway users
+- Configure user profiles of an API Gateway policy
 
 
 
@@ -62,6 +62,7 @@ Parameters
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">name</span> - Specify the name of the API gateway user.<span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">comments</span> - Enter a description or comments for the user. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

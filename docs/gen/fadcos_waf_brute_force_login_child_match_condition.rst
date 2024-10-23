@@ -4,7 +4,7 @@
 
 .. fadcos_waf_brute_force_login_child_match_condition:
 
-fadcos_waf_brute_force_login_child_match_condition -- Configure the WAF brute force login defense match condition
+fadcos_waf_brute_force_login_child_match_condition -- Configure the Match Condition object of a Brute Force Attack Detection policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_brute_force_login_child_match_condition -- Configure the WAF brute fo
 
 Synopsis
 --------
-- Configure the Brute Force Attack Detection Match Condition
+- Configure the Match Condition object of a Brute Force Attack Detection policy
 
 
 

@@ -1,10 +1,10 @@
-:source: fadcos_waf_cors_headers_child_list.py
+:source: fadcos_waf_file_restriction_rule.py
 
 :orphan:
 
-.. fadcos_waf_cors_headers_child_list:
+.. fadcos_waf_file_restriction_rule:
 
-fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Headers List
+fadcos_waf_file_restriction_rule -- Configuring a File Restriction rule
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_cors_headers_child_list -- Configure the list entries of a CORS Heade
 
 Synopsis
 --------
-- Configure the list entries of a CORS Headers List
+- Configuring a File Restriction rule
 
 
 
@@ -42,7 +42,7 @@ FortiADC Version Compatibility
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
- <td>fadcos_waf_cors_headers_child_list</td>
+ <td>fadcos_waf_file_restriction_rule</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -60,10 +60,14 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">name</span> - Specify the name of the CORS header list <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">header</span> - Specify the HTTP header as a string. (1-63 characters).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">id</span> - Specify the ID of the CORS header in the list.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
+    <li> <span class="li-head">name</span> - Specify the name of the <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">security_action</span> - Specify the action of the File Restriction Rule object.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">host_status</span> - Specify status of the host.<span class="li-normal">type: int</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">severity</span> -  Set the severity level in WAF logs of the violations of the file restriction rule object. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">url</span> -  Specify the URL of file restriction rule object. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">upload_file_size</span> -  Specify the upload file size. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">upload_file_status</span> -  Specify the upload file status. <span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</span></li>
     </ul>
 
 
@@ -78,28 +82,30 @@ Examples
           connection: httpapi
           gather_facts: false
           tasks:
-            - name: Add WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+            - name: Add file_restriction_rule
+              fadcos_waf_file_restriction_rule:
                 action: add
-                name: cor1
-                header: hhhhh
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_fr1
+                severity: low
+                url: /abb/ccd
+                
+            - name: edit file_restriction_rule
+              fadcos_waf_file_restriction_rule:
                 action: edit
-                name: cor1
-                id: 1
-                header: kkkkk
-            - name: edit WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_fr1
+                severity: high
+                url: /hggg/ccd
+                
+            - name: get file_restriction_rule
+              fadcos_waf_file_restriction_rule:
                 action: get
-                name: cor1
-                id: 1
-            - name: delete WAF cors_headers_child_cors_headers_list entry
-              fadcos_waf_cors_headers_child_list:
+                name: test_fr1
+
+            - name: delete file_restriction_rule
+              fadcos_waf_file_restriction_rule:
                 action: delete
-                name: cor1
-                id: 1
-            
+                name: test_fr1
+                    
 Return Values
 -------------
 Common return values are documented: https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values, the following are the fields unique to this module:

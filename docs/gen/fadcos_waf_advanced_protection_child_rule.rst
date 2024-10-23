@@ -4,7 +4,7 @@
 
 .. fadcos_waf_advanced_protection_child_rule:
 
-fadcos_waf_advanced_protection_child_rule -- Configure the WAF advanced protection entries' child url lists
+fadcos_waf_advanced_protection_child_rule -- Configure a rule object of an Advanced Protection policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_advanced_protection_child_rule -- Configure the WAF advanced protecti
 
 Synopsis
 --------
-- Configure the WAF advanced protection entries' child url lists
+- Configure a rule object of an Advanced Protection policy
 
 
 
@@ -68,6 +68,7 @@ Parameters
     <li> <span class="li-head">percentage_match</span> - Sets the condition for what percentage of the traffic received is from the specified type, during the given time frame.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">security_action</span> - Select which action profile that you want to apply.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">severity</span> - Select which severity level FortiADC uses when using Advanced Protection.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

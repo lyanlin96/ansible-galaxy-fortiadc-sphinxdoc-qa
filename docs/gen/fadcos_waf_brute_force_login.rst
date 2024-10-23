@@ -4,7 +4,7 @@
 
 .. fadcos_waf_brute_force_login:
 
-fadcos_waf_brute_force_login -- Configure the WAF brute force detection policy
+fadcos_waf_brute_force_login -- Configuring a Brute Force Attack Detection policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_brute_force_login -- Configure the WAF brute force detection policy
 
 Synopsis
 --------
-- Configure Brute Force Attack Detection policy
+- Configuring a Brute Force Attack Detection policy
 
 
 
@@ -65,6 +65,7 @@ Parameters
     <li> <span class="li-head">security_action</span> - Select the action profile that you want to apply.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">severity</span> - Log as high/medium/low severity events.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">exception</span> - Select an exception configuration object. <span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

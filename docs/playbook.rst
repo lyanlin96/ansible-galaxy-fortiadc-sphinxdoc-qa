@@ -23,7 +23,7 @@ in our case we create a file named ``hosts``:
    fortiadc02 ansible_host=192.168.190.131 ansible_user="admin" ansible_password="password"
 
    [fortiadcs:vars]
-   ansible_network_os=fortinet.fortiadc.fortiadc
+   ansible_network_os=fortinet.fortiadc.fortios
    ansible_httpapi_use_ssl=yes
    ansible_httpapi_validate_certs=no
    ansible_httpapi_port=443

@@ -4,7 +4,7 @@
 
 .. fadcos_waf_api_gateway_policy:
 
-fadcos_waf_api_gateway_policy -- Configure the WAF gateway policies
+fadcos_waf_api_gateway_policy -- Configuring an API Gateway policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_api_gateway_policy -- Configure the WAF gateway policies
 
 Synopsis
 --------
-- Configure the WAF gateway policies
+- Configuring an API Gateway policy
 
 
 
@@ -61,6 +61,7 @@ Parameters
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
     <li> <span class="li-head">name</span> - Specify the name of the API gateway policy. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

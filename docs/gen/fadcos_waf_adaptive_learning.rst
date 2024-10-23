@@ -4,7 +4,7 @@
 
 .. fadcos_waf_adaptive_learning:
 
-fadcos_waf_adaptive_learning -- Configure the WAF adaptive learning policy
+fadcos_waf_adaptive_learning -- Configuring an Adaptive Learning policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_adaptive_learning -- Configure the WAF adaptive learning policy
 
 Synopsis
 --------
-- Configure the WAF Adaptive Learning Page
+- Configuring an Adaptive Learning policy
 
 
 
@@ -65,6 +65,7 @@ Parameters
     <li> <span class="li-head">learning_time</span> - The learning time of adaptive learning policy.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">sampling_rate</span> - Specify the percentage of received requests and their responses that will be sampled.<span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
     <li> <span class="li-head">security_action</span> - Set the action to take after you accept the recommendation for the WAF policy from Adaptive Learning.<span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 

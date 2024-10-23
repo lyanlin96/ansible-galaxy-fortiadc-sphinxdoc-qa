@@ -4,7 +4,7 @@
 
 .. fadcos_waf_adaptive_learning_child_url_list:
 
-fadcos_waf_adaptive_learning_child_url_list -- Configure the WAF adaptive learning entries' child url lists
+fadcos_waf_adaptive_learning_child_url_list -- Configure the URL List settings of an Adaptive Learning policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.3.0
@@ -16,7 +16,7 @@ fadcos_waf_adaptive_learning_child_url_list -- Configure the WAF adaptive learni
 
 Synopsis
 --------
-- Configure the WAF adaptive learning entries' child url lists in Adaptive Learning Page
+- Configure the URL List settings of an Adaptive Learning polic
 
 
 
@@ -64,6 +64,7 @@ Parameters
     <li> <span class="li-head">host</span> - Specify the HTTP Host header. If Host Status is enabled, the policy matches only if the Host header matches this value. Complete, exact matching is required.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">host_status</span> - The Host option is available if Host Status is enabled.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">url</span> - The literal URL, such as /index.php, or a regular expression, such as ^/*.php that the HTTP request must contain in order to match the rule. Multiple URLs are supported.<span class="li-normal">type: str</span> <span class="li-required">required: false</span></li>
+    <li> <span class="li-head">vdom</span> - VDOM name if enabled.<span class="li-normal">type: str</span> <span class="li-required">required: true(if VDOM is enabled)</li>
     </ul>
 
 
