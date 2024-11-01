@@ -12,6 +12,7 @@ FortiADC Galaxy 1.3.0 is based on 1.2.1.
 
 Features
 ^^^^^^^^^^^^^^^
+- Fix bugs of fadcos_backup_config.
 - Add new modules: 
 ::
 
@@ -56,7 +57,7 @@ Features
   - fadcos_waf_web_attack_signature
   - fadcos_waf_xml_validation_detection
   
-- FortiADC version: v7.2.x and v7.4.x
+- FortiADC version: v7.2.x, v7.4.x and v7.6.x
 
 Release Galaxy 1.2.1
 --------------------
