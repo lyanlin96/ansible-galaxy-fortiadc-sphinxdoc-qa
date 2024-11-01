@@ -70,7 +70,7 @@ Parameters
     <li> <span class="li-head">exception</span> - Specify exceptions identifing specific patterns that are not subject to processing by WAF rules.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">http_only</span> - Enable to add "HTTPOnly" flag to cookies.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">rm_cookie</span> - Enable so FortiADC will accept the request, but will also remove the cookie before sending it to backend web server.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
-    <li> <span class="li-head">sec_mode</span> - Specify a security mode (No, Signed, or Encrypted).<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">sec_mode</span> - Specify a security mode ("no", "signed", or "encrypted").<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">security_action</span> - Select the action to apply.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">secure</span> - Enable to add the secure flag to cookies.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">severity</span> - Select which severity level FortiADC uses when using Cookie Security.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
