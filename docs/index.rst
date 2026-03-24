@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Ansible Galaxy FortiADC Collection Documentation 1.3.0!
+Welcome to Ansible Galaxy FortiADC Collection Documentation 1.3.1!
 ============================================================================
 
 The FortiADC Ansible Collection provides Ansible modules for configuring FortiADC appliances.

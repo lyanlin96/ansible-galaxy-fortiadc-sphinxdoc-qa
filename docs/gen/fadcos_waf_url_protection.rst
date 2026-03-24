@@ -131,4 +131,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, you can create a pull request to improve it at: https://github.com/fortinet-ansible-dev/ansible-galaxy-fortiadc-sphinxdoc/pulls

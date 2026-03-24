@@ -113,9 +113,7 @@ Examples
 		   interface: port5
 		   vlanid: 100
 		   IPandMask: 123.23.3.12/24
-		   allowaccess:
-				   - snmp
-				   - http
+		   allowaccess: snmp https
 
 
 Return Values
@@ -154,4 +152,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, you can create a pull request to improve it at: https://github.com/fortinet-ansible-dev/ansible-galaxy-fortiadc-sphinxdoc/pulls

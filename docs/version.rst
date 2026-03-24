@@ -22,6 +22,8 @@ are expected to find the version compatibility information for each module and i
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
 | 7.6.0         | 1.3.0               | 2024/10/25     | ``ansible-galaxy collection install fortinet.fortiADC:1.3.0``       |
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
+| 7.6.0         | 1.3.1               | 2025/12/25     | ``ansible-galaxy collection install fortinet.fortiADC:1.3.1``       |
++---------------+---------------------+----------------+---------------------------------------------------------------------+
 
 **Note**: Use ``-f`` option (i.e.
 ``ansible-galaxy collection install -f fortinet.fortiADC:x.x.x``) to renew your existing local installation.

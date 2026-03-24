@@ -104,6 +104,8 @@ Parameters
     <li> <span class="li-head">scripting_list</span> - virtual server scripting list<span class="li-normal">type: str</span> <span class="li-required">required: true (if scripting_flag is enable)</span> </li>
     <li> <span class="li-head">source_pool_list</span> - ip pool name<span class="li-normal">type: list</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">waf_profile</span> - web application firewall profile name<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">dos_profile</span> - web application DoS profile name<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
+    <li> <span class="li-head">captcha_profile</span> - web application captcha profile name<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">http2https</span> - enable/disable redirect HTTP request to HTTPS<span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal">default: disable</span> </li>
     <li> <span class="li-head">http2https_port</span> - HTTP service port list for redirecting HTTP to HTTPS<span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal">default: 80</span> </li>
     <li> <span class="li-head">l2_exception_list</span> - layer2 exception list<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
@@ -181,4 +183,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, you can create a pull request to improve it at: https://github.com/fortinet-ansible-dev/ansible-galaxy-fortiadc-sphinxdoc/pulls

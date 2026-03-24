@@ -1,6 +1,20 @@
 
 Release Notes
 ==============================
+Release Galaxy 1.3.1
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiADC Galaxy 1.3.1 is based on 1.3.0.
+
+Features
+^^^^^^^^^^^^^^^
+- Add check mode for FortiADC ansible modules.
+- Add diff mode for FortiADC ansible modules.
+- Add error handling when upload files are not found for some modules.
+- Fix mirror bugs.
 
 Release Galaxy 1.3.0
 --------------------

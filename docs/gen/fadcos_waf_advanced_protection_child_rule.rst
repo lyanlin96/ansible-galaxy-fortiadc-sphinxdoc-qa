@@ -77,35 +77,35 @@ Examples
 
 .. code-block:: yaml+jinja
 
-        - name:
-          hosts: all
-          vars:
-          connection: httpapi
-          gather_facts: false
-          tasks:
-            - name: Add WAF advanced protection child rule
-              fadcos_waf_advanced_protection_child_rule:
-                action: add
-                name: AP0
-                occurrence_limit: 120
-                occurrence_within: 90
-                percentage_match: 30
-                type: content-scraping
+      - name:
+        hosts: all
+        vars:
+        connection: httpapi
+        gather_facts: false
+        tasks:
+          - name: Add WAF advanced protection child rule
+            fadcos_waf_advanced_protection_child_rule:
+              action: add
+              name: AP0
+              occurrence_limit: 120
+              occurrence_within: 90
+              percentage_match: 30
+              type: content-scraping
 
-            - name: edit WAF advanced protection child rule
-              fadcos_waf_advanced_protection_child_rule:
-                action: edit
-                name: AP0
-                occurrence_limit: 150
-                occurrence_within: 100
-                percentage_match: 50
-                id: 1
+          - name: edit WAF advanced protection child rule
+            fadcos_waf_advanced_protection_child_rule:
+              action: edit
+              name: AP0
+              occurrence_limit: 150
+              occurrence_within: 100
+              percentage_match: 50
+              id: 1
 
-            - name: delete WAF advanced_protection
-              fadcos_waf_advanced_protection_child_rule:
-                action: delete
-                name: AP0
-                id: 2
+          - name: delete WAF advanced_protection
+            fadcos_waf_advanced_protection_child_rule:
+              action: delete
+              name: AP0
+              id: 2
             
 Return Values
 -------------
@@ -142,4 +142,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, you can create a pull request to improve it at: https://github.com/fortinet-ansible-dev/ansible-galaxy-fortiadc-sphinxdoc/pulls
