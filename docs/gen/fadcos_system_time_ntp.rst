@@ -60,7 +60,6 @@ Parameters
 
     <ul>
     <li> <span class="li-head">action</span> - Type of action to perform on the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-    <li> <span class="li-head">ntpserver</span> - Specify the IP address or domain name of an NTP server or pool.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> </li>
     <li> <span class="li-head">ntpsync</span> - Enable/disable use of NTP.<span class="li-normal">type: str</span> <span class="li-required">required: false</span> <span class="li-normal">default: enable</span> </li>
     <li> <span class="li-head">syncinterval</span> - Specify how often the system synchronizes its time with the NTP server. (Range: 1-1440).<span class="li-normal">type: str</span> <span class="li-normal">default: 60</span><span class="li-required">required: false</span> </li>
     </ul>
@@ -80,7 +79,6 @@ Examples
             - name: edit
               fadcos_system_time_ntp:
                action: edit
-               ntpserver: pool.ntp.org
                ntpsync: enable
                syncinterval: '60'
 
